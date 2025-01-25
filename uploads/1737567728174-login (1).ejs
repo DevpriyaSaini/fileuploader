@@ -1,0 +1,63 @@
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="/views/css/login.css">
+</head>
+<body>
+    <div class="back"><a href="/job.ejs"><-</a></div>
+    <div class="container">
+        <div class="form-page">
+            <div class="form signin-form">
+                <form action="">
+                    <h3>Sign In</h3>
+                    <div class="input-box">
+                        <input  id="username" type="text" spellcheck="false" required>
+                        <label for="">Username or Email</label>
+                    </div>
+                    <div class="input-box">
+                        <input id="password" type="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    <input type="submit" value="Login">
+                    <a href="">Forgot Password</a>
+                </form>
+            </div>
+
+            <div class="form signup-form">
+                <form action="">
+                    <h3>Sign Up</h3>
+                    <div class="input-box">
+                        <input id="username2"  type="text" required>
+                        <label for="">Username</label>
+                    </div>
+                    <div class="input-box">
+                        <input  id="email"type="text" required>
+                        <label for="">Email Address</label>
+                    </div>
+                    <div class="input-box">
+                        <input id="pass2" type="password" required>
+                        <label for="">Password</label>
+                    </div>
+                    
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+        <div class="back-page">
+            <div class="auth-box signin">
+                <h2>Already Have an Account ?</h2>
+                <button class="signin-btn">Sign in</button>
+            </div>
+            <div class="auth-box signup">
+                <h2>Dont't Have an Account ?</h2>
+                <button class="signup-btn">Sign up</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/views/js/login.js"></script>
+</body>
+</html>

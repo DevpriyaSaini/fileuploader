@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>file uploader</h1>
+    <% if (locals.filename) { %>
+    <p>file--><%= filename%></p>
+    <% } %>
+
+
+    <form id="jobForm" action="/job/create" method="post" enctype="multipart/form-data">
+        <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" required>
+        <input type="number" id="salary" name="order" placeholder="Order value" required>
+        <input type="date" id="date" name="date" required>
+        <input type="file" id="file" name="file">
+       <button type="submit">add job</button>
+    </form>
+
+
+    <form id="searchForm" action="/job/search" method="get">
+        <input type="text" name="query" placeholder="Search by Job Title" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Display Search Results -->
+    <h2>Results:</h2>
+    <ul>
+        <% if (locals.jobs && jobs.length > 0) { %>
+            <% jobs.forEach(job => { %>
+                <li>
+                    <strong>Title:</strong> <%= job.jobTitle %> | 
+                    <strong>Order Value:</strong> <%= job.order %> | 
+                    <strong>Date:</strong> <%= job.date.toDateString() %> |
+                    <a href="<%= job.fileUrl %>" target="_blank">View File</a>
+                </li>
+            <% }); %>
+        <% } else { %>
+            <p>No results found.</p>
+        <% } %>
+    </ul>
+    
+</body>
+</html>
