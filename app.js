@@ -29,10 +29,7 @@ async function connectdb() {
   
   // Connect to MongoDB
   mongoose
-    .connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    })
+    .connect(mongoURI)
     .then(() => {
       console.log('Connected to MongoDB!');
     })
